@@ -1,9 +1,6 @@
 <template>
   <section>
-    <header>
-      <i></i>
-      酒店搜索
-    </header>
+    <header><i></i>酒店搜索</header>
     <div class="wrap_contain">
       <p class="title">房间信息</p>
       <div class="flex-wrap">
@@ -55,8 +52,8 @@ export default {
       personCount:0,
       childrenCount:0,
       visible: false, //picker是否显示
-      childrenArr:[],
-      count:0,
+      childrenArr:[],  //添加小孩的数组
+      id:0,        //添加小孩的数组id,自增
       selectItem:'',  //选中小孩的item
       items: [        //年龄数组
         {
@@ -65,7 +62,6 @@ export default {
       ],
       indexText:'5岁',  //默认5岁
       Timer:null,      //因为选年龄没有确认按钮，所以，此处我添加了定时器，2s过后如果不选中，则提交默认
-
     }
   },
   methods: {
@@ -75,14 +71,14 @@ export default {
     },
     //添加儿童
     addChildren(){
-      let { count } = this;
+      let { id } = this;
       this.childrenCount++;
       this.childrenArr.push({
-        id:count,
+        id,
         age:'',
         visible:false
       })
-      this.count = count++;
+      this.id = id++;
     },
     //打开选择年龄的picker
     open (item) {
@@ -97,8 +93,7 @@ export default {
       items.index = index;
     },
     //年龄修改
-    onValuesChange(result1 ) {
-      console.log(result1)
+    onValuesChange(result1) {
       clearInterval(this.Timer)
       //因为选年龄没有确认按钮，所以，此处我添加了定时器，3s过后如果不选中，则提交默认
       this.Timer = setTimeout(()=>{

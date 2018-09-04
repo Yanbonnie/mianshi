@@ -9,12 +9,10 @@
 @function REMTWO($n){
     @return REM(((750-$n)/2));
 }
-p,ul,li,div{
+p,ul,li,div,a{
   font-family: "Microsoft YaHei";
 }
-.shengl{
-    word-break:keep-all;/* 不换行 */
-    white-space:nowrap;/* 不换行 */
-    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
-    text-overflow:ellipsis;
-}
+a:link{text-decoration:none; }
+a:visited{text-decoration:none; }
+a:hover{text-decoration:none;}
+a:active{text-decoration:none;}
