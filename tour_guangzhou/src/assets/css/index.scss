@@ -1,6 +1,10 @@
 @import 'base.scss';
 $activeColor: #FF5B5E;
-header{
+#app{
+  // max-width: REM(750);
+  // margin: 0 auto;
+}
+.header{
     height: REM(88);
     background: #fff;
     line-height: REM(88);

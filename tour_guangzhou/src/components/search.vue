@@ -1,6 +1,6 @@
 <template>
   <section>
-    <header><i></i>酒店搜索</header>
+    <header class="header"><i></i>酒店搜索</header>
     <div class="wrap_contain">
       <p class="title">房间信息</p>
       <div class="flex-wrap">
@@ -28,7 +28,7 @@
           <span class="icon add" @click="addChildren"></span>
         </div>
       </div>
-      <div v-for="(item,index) in childrenArr">
+      <div v-for="(item,index) in childrenArr" :key="index">
         <div class="flex-wrap" >
           <div class="flex-item left">儿童{{index+1}}年龄</div>
           <div class="flex-item age"  @click="open(item)">
