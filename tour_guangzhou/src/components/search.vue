@@ -99,7 +99,7 @@ export default {
       this.Timer = setTimeout(()=>{
         this.selectItem.visible = false;
         this.selectItem.age= result1;
-      },2000)
+      },200000)
     }
   },
   mounted(){
